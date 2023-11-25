@@ -1,0 +1,154 @@
+﻿@{
+    ViewBag.Title = "اضافة جديد";
+}
+
+<h2 class="text-primary">اضافة جديد</h2>
+
+<form>
+    <div class="mb-3">
+        <label class="form-label">رقم العطاء</label>
+        <input type="text" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">تاريخ الادخال</label>
+        <input type="datetime-local" class="form-control" />
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label class="form-label">اسم المشروع</label>
+            <select class="form-control">
+                <!-- Add options for project names -->
+                <option value="project1">Project 1</option>
+                <option value="project2">Project 2</option>
+                <!-- Add more options if needed -->
+            </select>
+            <input type="text" class="form-control mt-2" placeholder="اسم مشروع جديد" />
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">حالة العطاء</label>
+            <select class="form-control">
+                <!-- Add options for bid status -->
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <!-- Add more options if needed -->
+            </select>
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label class="form-label">المالك / العميل</label>
+            <select class="form-control">
+                <!-- Add options for customer names -->
+                <option value="customer1">Customer 1</option>
+                <option value="customer2">Customer 2</option>
+                <!-- Add more options if needed -->
+            </select>
+            <input type="text" class="form-control mt-2" placeholder="اسم مالك/عميل جديد" />
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">مدير المشروع</label>
+            <select class="form-control">
+                <!-- Add options for project manager names -->
+                <option value="manager1">Manager 1</option>
+                <option value="manager2">Manager 2</option>
+                <!-- Add more options if needed -->
+            </select>
+            <input type="text" class="form-control mt-2" placeholder="اسم مدير جديد" />
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">استشاري المشروع</label>
+            <select class="form-control">
+                <!-- Add options for project reviewers names -->
+                <option value="reviewer1">Reviewer 1</option>
+                <option value="reviewer2">Reviewer 2</option>
+                <!-- Add more options if needed -->
+            </select>
+            <input type="text" class="form-control mt-2" placeholder="اسم استشاري جديد" />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <label class="form-label">ملخص المشروع</label>
+            <textarea class="form-control" rows="5"></textarea>
+        </div>
+    </div>
+
+    <h3 class="text-primary mt-4">تفاصيل البند</h3>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>مسلسل</th>
+                <th>البند</th>
+                <th>الكود</th>
+                <th>الوحدة</th>
+                <th>الكمية</th>
+                <th>حالة البند</th>
+                <th>تفاصيل البند</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><input type="text" class="form-control" /></td>
+                <td><input type="text" class="form-control" /></td>
+                <td>
+                    <select class="form-control">
+                        <!-- Add options for measurement units -->
+                        <option value="unit1">Unit 1</option>
+                        <option value="unit2">Unit 2</option>
+                        <!-- Add more options if needed -->
+                    </select>
+                </td>
+                <td><input type="number" class="form-control" /></td>
+                <td>
+                    <select class="form-control">
+                        <option value="اساسي">اساسي</option>
+                        <option value="فرعي">فرعي</option>
+                    </select>
+                </td>
+                <td><input type="text" class="form-control" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="mb-3">
+        <button type="button" class="btn btn-primary" onclick="addRow()">اضافة بند</button>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-8">
+            <label class="form-label">اضف البيانات من ملف اكسيل</label>
+            <input type="file" class="form-control" />
+        </div>
+    </div>
+
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-success">حفظ</button>
+        <button type="button" class="btn btn-danger">الغاء</button>
+    </div>
+</form>
+
+<script>
+    function addRow() {
+        var table = document.querySelector('table tbody');
+        var newRow = table.insertRow(table.rows.length);
+
+        // Assuming there are 7 columns in the table
+        for (var i = 0; i < 7; i++) {
+            var cell = newRow.insertCell(i);
+            var input = document.createElement('input');
+            input.type = 'text';
+            input.className = 'form-control';
+            cell.appendChild(input);
+        }
+    }
+</script>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0bdf51c4a3e246f4bcdfb35859e8d033" Name="Diagram1">
+        <EntityTypeShape EntityType="prManSysModel.analysis_status" Width="1.5" PointX="1.5" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.clients" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.clients_receipts" Width="1.5" PointX="10.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.common_units" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.contractors" Width="1.5" PointX="8.25" PointY="23.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.contractors_receipts" Width="1.5" PointX="10.5" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.currency_list" Width="1.5" PointX="3" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.departments" Width="1.5" PointX="0.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.fin_rec_status" Width="1.5" PointX="3" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.fin_rec_types" Width="1.5" PointX="3" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.financial_records" Width="1.5" PointX="5.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.init_risk" Width="1.5" PointX="3.75" PointY="30.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.init_status" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.item_list" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.item_source" Width="1.5" PointX="3.75" PointY="34" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.item_types" Width="1.5" PointX="3" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.pricing_rules" Width="1.5" PointX="3.75" PointY="38.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.pricing_status" Width="1.5" PointX="3.75" PointY="41.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.proj_domain" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.proj_phases" Width="1.5" PointX="1.5" PointY="32.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.proj_pricing" Width="1.5" PointX="6" PointY="36.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.project_contracts" Width="1.5" PointX="15.75" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.project_executive" Width="1.5" PointX="8.25" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.project_payment_types" Width="1.5" PointX="8.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.project_status" Width="1.5" PointX="5.25" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.project_users" Width="1.5" PointX="5.25" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.projects" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.purchase_trx_types" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.revenue_rules" Width="1.5" PointX="3.75" PointY="43.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.risk_rules" Width="1.5" PointX="3.75" PointY="46.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.roles" Width="1.5" PointX="0.75" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.storage_receipts" Width="1.5" PointX="11.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.storage_trx_types" Width="1.5" PointX="9" PointY="27.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.suppliers" Width="1.5" PointX="5.25" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.suppliers_receipts" Width="1.5" PointX="7.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.task_funding" Width="1.5" PointX="13.5" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.task_items" Width="1.5" PointX="16.5" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.task_progress" Width="1.5" PointX="18" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.task_subcontract" Width="1.5" PointX="12.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.task_worker" Width="1.5" PointX="13.5" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.tax_rules" Width="1.5" PointX="3.75" PointY="48.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="prManSysModel.users" Width="1.5" PointX="3" PointY="16.75" IsExpanded="true" />
+        <AssociationConnector Association="prManSysModel.FK__proj_phas__cur_s__3864608B" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__clients_r__clien__1BC821DD" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__projects__client__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__clients_r__fin_r__1DB06A4F" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__clients_r__pr_pa__1EA48E88" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__clients_r__proj___1CBC4616" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__project_c__clien__74794A92" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__proj_phas__p_uni__367C1819" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__proj_pric__p_uni__57DD0BE4" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__storage_r__item___6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__suppliers__item___0E6E26BF" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_item__i_uni__0E391C95" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__contracto__contr__160F4887" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__contracto__domai__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__contracto__fin_r__17F790F9" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__contracto__pr_pa__18EBB532" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__contracto__proj___17036CC0" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_subc__contr__00DF2177" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__financial__f_cur__04E4BC85" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_fund__f_cur__15DA3E5D" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_work__i_cur__1D7B6025" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__users__departmen__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK_financial_records_fin_rec_status" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__financial__trans__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__financial__assig__05D8E0BE" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__suppliers__fin_r__0F624AF8" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_fund__fund___16CE6296" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__init_risk__domai__46B27FE2" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__proj_pric__domai__5D95E53A" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__project_s__p_sta__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__item_list__item___6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__proj_pric__item___56E8E7AB" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__storage_r__item___693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__suppliers__item___0D7A0286" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_item__item___0D44F85C" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__item_sour__phase__3B40CD36" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__proj_pric__i_sou__58D1301D" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__proj_pric__price__5CA1C101" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__project_c__pric___73852659" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__proj_pric__cur_s__6166761E" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK_projects_proj_domain" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__proj_phas__paren__37703C52" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__proj_phas__proj___3587F3E0" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__proj_pric__phase__55F4C372" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__proj_pric__rev_r__5BAD9CC8" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__proj_pric__risk___5E8A0973" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__proj_pric__tax_r__5AB9788F" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__project_c__prici__719CDDE7" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__project_e__prici__7B264821" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__project_c__assig__756D6ECB" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__project_e__assig__7C1A6C5A" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__project_e__proj___7A3223E8" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_fund__task___14E61A24" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_item__task___0C50D423" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_prog__task___05A3D694" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_subc__task___7FEAFD3E" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_work__task___1B9317B3" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__project_s__assig__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__project_s__proje__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__project_u__proje__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__project_us__u_id__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__suppliers__trans__10566F31" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__users__role_id__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__storage_r__assig__6D0D32F4" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__storage_r__trans__6C190EBB" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_item__stk_r__0F2D40CE" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__suppliers__suppl__0C85DE4D" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_item__pur_r__10216507" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_fund__assig__17C286CF" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_item__assig__11158940" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_prog__assig__0880433F" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_prog__subco__0697FACD" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_subc__assig__01D345B0" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_work__assig__1E6F845E" ManuallyRouted="false" />
+        <AssociationConnector Association="prManSysModel.FK__task_work__emp_i__1C873BEC" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

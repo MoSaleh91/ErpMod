@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="prManSysModelStoreContainer" CdmEntityContainer="prManSysEntities1">
+    <EntitySetMapping Name="analysis_status">
+      <EntityTypeMapping TypeName="prManSysModel.analysis_status">
+        <MappingFragment StoreEntitySet="analysis_status">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="analysis_stat" ColumnName="analysis_stat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clients">
+      <EntityTypeMapping TypeName="prManSysModel.clients">
+        <MappingFragment StoreEntitySet="clients">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="c_name" ColumnName="c_name" />
+          <ScalarProperty Name="c_email" ColumnName="c_email" />
+          <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clients_receipts">
+      <EntityTypeMapping TypeName="prManSysModel.clients_receipts">
+        <MappingFragment StoreEntitySet="clients_receipts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="proj_id" ColumnName="proj_id" />
+          <ScalarProperty Name="fin_rec_id" ColumnName="fin_rec_id" />
+          <ScalarProperty Name="pr_paymen_type" ColumnName="pr_paymen_type" />
+          <ScalarProperty Name="receipt_details" ColumnName="receipt_details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="common_units">
+      <EntityTypeMapping TypeName="prManSysModel.common_units">
+        <MappingFragment StoreEntitySet="common_units">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="unit_name" ColumnName="unit_name" />
+          <ScalarProperty Name="unit_ac" ColumnName="unit_ac" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contractors">
+      <EntityTypeMapping TypeName="prManSysModel.contractors">
+        <MappingFragment StoreEntitySet="contractors">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="sc_name" ColumnName="sc_name" />
+          <ScalarProperty Name="sc_email" ColumnName="sc_email" />
+          <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+          <ScalarProperty Name="domain_id" ColumnName="domain_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contractors_receipts">
+      <EntityTypeMapping TypeName="prManSysModel.contractors_receipts">
+        <MappingFragment StoreEntitySet="contractors_receipts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="contractor_id" ColumnName="contractor_id" />
+          <ScalarProperty Name="proj_id" ColumnName="proj_id" />
+          <ScalarProperty Name="fin_rec_id" ColumnName="fin_rec_id" />
+          <ScalarProperty Name="pr_paymen_type" ColumnName="pr_paymen_type" />
+          <ScalarProperty Name="receipt_details" ColumnName="receipt_details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="currency_list">
+      <EntityTypeMapping TypeName="prManSysModel.currency_list">
+        <MappingFragment StoreEntitySet="currency_list">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="cur_name" ColumnName="cur_name" />
+          <ScalarProperty Name="cur_symbol" ColumnName="cur_symbol" />
+          <ScalarProperty Name="cur_rate" ColumnName="cur_rate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="departments">
+      <EntityTypeMapping TypeName="prManSysModel.departments">
+        <MappingFragment StoreEntitySet="departments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="department_name" ColumnName="department_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fin_rec_status">
+      <EntityTypeMapping TypeName="prManSysModel.fin_rec_status">
+        <MappingFragment StoreEntitySet="fin_rec_status">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rec_status" ColumnName="rec_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fin_rec_types">
+      <EntityTypeMapping TypeName="prManSysModel.fin_rec_types">
+        <MappingFragment StoreEntitySet="fin_rec_types">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="trx_type" ColumnName="trx_type" />
+          <ScalarProperty Name="trx_reason" ColumnName="trx_reason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="financial_records">
+      <EntityTypeMapping TypeName="prManSysModel.financial_records">
+        <MappingFragment StoreEntitySet="financial_records">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="transaction_type" ColumnName="transaction_type" />
+          <ScalarProperty Name="transaction_status" ColumnName="transaction_status" />
+          <ScalarProperty Name="f_amount" ColumnName="f_amount" />
+          <ScalarProperty Name="f_currency" ColumnName="f_currency" />
+          <ScalarProperty Name="transaction_detail" ColumnName="transaction_detail" />
+          <ScalarProperty Name="assign_by" ColumnName="assign_by" />
+          <ScalarProperty Name="assign_date" ColumnName="assign_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="init_risk">
+      <EntityTypeMapping TypeName="prManSysModel.init_risk">
+        <MappingFragment StoreEntitySet="init_risk">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="domain_id" ColumnName="domain_id" />
+          <ScalarProperty Name="domain_risk_percent" ColumnName="domain_risk_percent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="init_status">
+      <EntityTypeMapping TypeName="prManSysModel.init_status">
+        <MappingFragment StoreEntitySet="init_status">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="init_stat" ColumnName="init_stat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="item_list">
+      <EntityTypeMapping TypeName="prManSysModel.item_list">
+        <MappingFragment StoreEntitySet="item_list">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="item_name" ColumnName="item_name" />
+          <ScalarProperty Name="item_description" ColumnName="item_description" />
+          <ScalarProperty Name="item_type" ColumnName="item_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="item_source">
+      <EntityTypeMapping TypeName="prManSysModel.item_source">
+        <MappingFragment StoreEntitySet="item_source">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="phase_id" ColumnName="phase_id" />
+          <ScalarProperty Name="amount_in_stock" ColumnName="amount_in_stock" />
+          <ScalarProperty Name="stock_avg_price" ColumnName="stock_avg_price" />
+          <ScalarProperty Name="prev_purchase_price" ColumnName="prev_purchase_price" />
+          <ScalarProperty Name="is_new_price" ColumnName="is_new_price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="item_types">
+      <EntityTypeMapping TypeName="prManSysModel.item_types">
+        <MappingFragment StoreEntitySet="item_types">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="in_type" ColumnName="in_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pricing_rules">
+      <EntityTypeMapping TypeName="prManSysModel.pricing_rules">
+        <MappingFragment StoreEntitySet="pricing_rules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="type_of_rule" ColumnName="type_of_rule" />
+          <ScalarProperty Name="price_rule" ColumnName="price_rule" />
+          <ScalarProperty Name="price_percent" ColumnName="price_percent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pricing_status">
+      <EntityTypeMapping TypeName="prManSysModel.pricing_status">
+        <MappingFragment StoreEntitySet="pricing_status">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pricing_stat" ColumnName="pricing_stat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proj_domain">
+      <EntityTypeMapping TypeName="prManSysModel.proj_domain">
+        <MappingFragment StoreEntitySet="proj_domain">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="p_domains" ColumnName="p_domains" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proj_phases">
+      <EntityTypeMapping TypeName="prManSysModel.proj_phases">
+        <MappingFragment StoreEntitySet="proj_phases">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="proj_id" ColumnName="proj_id" />
+          <ScalarProperty Name="phase_name" ColumnName="phase_name" />
+          <ScalarProperty Name="phase_description" ColumnName="phase_description" />
+          <ScalarProperty Name="p_unit" ColumnName="p_unit" />
+          <ScalarProperty Name="p_amount" ColumnName="p_amount" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="parent_id" ColumnName="parent_id" />
+          <ScalarProperty Name="hasChildren" ColumnName="hasChildren" />
+          <ScalarProperty Name="estimated_start_date" ColumnName="estimated_start_date" />
+          <ScalarProperty Name="estimated_end_date" ColumnName="estimated_end_date" />
+          <ScalarProperty Name="cur_status" ColumnName="cur_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="proj_pricing">
+      <EntityTypeMapping TypeName="prManSysModel.proj_pricing">
+        <MappingFragment StoreEntitySet="proj_pricing">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="phase_id" ColumnName="phase_id" />
+          <ScalarProperty Name="item_name" ColumnName="item_name" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="item_description" ColumnName="item_description" />
+          <ScalarProperty Name="p_unit" ColumnName="p_unit" />
+          <ScalarProperty Name="p_amount" ColumnName="p_amount" />
+          <ScalarProperty Name="notes" ColumnName="notes" />
+          <ScalarProperty Name="i_source" ColumnName="i_source" />
+          <ScalarProperty Name="unit_costs" ColumnName="unit_costs" />
+          <ScalarProperty Name="added_expenses" ColumnName="added_expenses" />
+          <ScalarProperty Name="tax_rule" ColumnName="tax_rule" />
+          <ScalarProperty Name="rev_rule" ColumnName="rev_rule" />
+          <ScalarProperty Name="price_rule" ColumnName="price_rule" />
+          <ScalarProperty Name="domain_risk" ColumnName="domain_risk" />
+          <ScalarProperty Name="risk_rule" ColumnName="risk_rule" />
+          <ScalarProperty Name="total_costs" ColumnName="total_costs" />
+          <ScalarProperty Name="total_sell_price" ColumnName="total_sell_price" />
+          <ScalarProperty Name="cur_status" ColumnName="cur_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="project_contracts">
+      <EntityTypeMapping TypeName="prManSysModel.project_contracts">
+        <MappingFragment StoreEntitySet="project_contracts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="pricing_id" ColumnName="pricing_id" />
+          <ScalarProperty Name="total_price" ColumnName="total_price" />
+          <ScalarProperty Name="pric_rule" ColumnName="pric_rule" />
+          <ScalarProperty Name="client_rec_id" ColumnName="client_rec_id" />
+          <ScalarProperty Name="contract_terms" ColumnName="contract_terms" />
+          <ScalarProperty Name="assign_by" ColumnName="assign_by" />
+          <ScalarProperty Name="assign_date" ColumnName="assign_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="project_executive">
+      <EntityTypeMapping TypeName="prManSysModel.project_executive">
+        <MappingFragment StoreEntitySet="project_executive">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="proj_id" ColumnName="proj_id" />
+          <ScalarProperty Name="pricing_id" ColumnName="pricing_id" />
+          <ScalarProperty Name="task_name" ColumnName="task_name" />
+          <ScalarProperty Name="task_description" ColumnName="task_description" />
+          <ScalarProperty Name="task_priority" ColumnName="task_priority" />
+          <ScalarProperty Name="planned_start_date" ColumnName="planned_start_date" />
+          <ScalarProperty Name="planned_end_date" ColumnName="planned_end_date" />
+          <ScalarProperty Name="actual_start_date" ColumnName="actual_start_date" />
+          <ScalarProperty Name="actual_end_date" ColumnName="actual_end_date" />
+          <ScalarProperty Name="planned_resource" ColumnName="planned_resource" />
+          <ScalarProperty Name="planned_fund" ColumnName="planned_fund" />
+          <ScalarProperty Name="actual_resource" ColumnName="actual_resource" />
+          <ScalarProperty Name="actual_fund" ColumnName="actual_fund" />
+          <ScalarProperty Name="assign_by" ColumnName="assign_by" />
+          <ScalarProperty Name="assign_date" ColumnName="assign_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="project_payment_types">
+      <EntityTypeMapping TypeName="prManSysModel.project_payment_types">
+        <MappingFragment StoreEntitySet="project_payment_types">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="payment_types" ColumnName="payment_types" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="project_status">
+      <EntityTypeMapping TypeName="prManSysModel.project_status">
+        <MappingFragment StoreEntitySet="project_status">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="p_status" ColumnName="p_status" />
+          <ScalarProperty Name="is_paused" ColumnName="is_paused" />
+          <ScalarProperty Name="is_internal" ColumnName="is_internal" />
+          <ScalarProperty Name="assign_date" ColumnName="assign_date" />
+          <ScalarProperty Name="assign_by" ColumnName="assign_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="project_users">
+      <EntityTypeMapping TypeName="prManSysModel.project_users">
+        <MappingFragment StoreEntitySet="project_users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="project_id" ColumnName="project_id" />
+          <ScalarProperty Name="u_id" ColumnName="u_id" />
+          <ScalarProperty Name="u_role" ColumnName="u_role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="projects">
+      <EntityTypeMapping TypeName="prManSysModel.projects">
+        <MappingFragment StoreEntitySet="projects">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="p_name" ColumnName="p_name" />
+          <ScalarProperty Name="p_domain" ColumnName="p_domain" />
+          <ScalarProperty Name="p_description" ColumnName="p_description" />
+          <ScalarProperty Name="client_id" ColumnName="client_id" />
+          <ScalarProperty Name="p_start_date" ColumnName="p_start_date" />
+          <ScalarProperty Name="p_end_date" ColumnName="p_end_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchase_trx_types">
+      <EntityTypeMapping TypeName="prManSysModel.purchase_trx_types">
+        <MappingFragment StoreEntitySet="purchase_trx_types">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="purchase_types" ColumnName="purchase_types" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="revenue_rules">
+      <EntityTypeMapping TypeName="prManSysModel.revenue_rules">
+        <MappingFragment StoreEntitySet="revenue_rules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rev_rule" ColumnName="rev_rule" />
+          <ScalarProperty Name="rev_percent" ColumnName="rev_percent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="risk_rules">
+      <EntityTypeMapping TypeName="prManSysModel.risk_rules">
+        <MappingFragment StoreEntitySet="risk_rules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="risk_rule" ColumnName="risk_rule" />
+          <ScalarProperty Name="risk_percent" ColumnName="risk_percent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="roles">
+      <EntityTypeMapping TypeName="prManSysModel.roles">
+        <MappingFragment StoreEntitySet="roles">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="role_name" ColumnName="role_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="storage_receipts">
+      <EntityTypeMapping TypeName="prManSysModel.storage_receipts">
+        <MappingFragment StoreEntitySet="storage_receipts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="item_unit" ColumnName="item_unit" />
+          <ScalarProperty Name="item_amount" ColumnName="item_amount" />
+          <ScalarProperty Name="unit_price" ColumnName="unit_price" />
+          <ScalarProperty Name="transaction_type" ColumnName="transaction_type" />
+          <ScalarProperty Name="transaction_detail" ColumnName="transaction_detail" />
+          <ScalarProperty Name="assign_by" ColumnName="assign_by" />
+          <ScalarProperty Name="assign_date" ColumnName="assign_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="storage_trx_types">
+      <EntityTypeMapping TypeName="prManSysModel.storage_trx_types">
+        <MappingFragment StoreEntitySet="storage_trx_types">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="trx_type" ColumnName="trx_type" />
+          <ScalarProperty Name="trx_reason" ColumnName="trx_reason" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="suppliers">
+      <EntityTypeMapping TypeName="prManSysModel.suppliers">
+        <MappingFragment StoreEntitySet="suppliers">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="s_name" ColumnName="s_name" />
+          <ScalarProperty Name="s_email" ColumnName="s_email" />
+          <ScalarProperty Name="tax_id" ColumnName="tax_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="suppliers_receipts">
+      <EntityTypeMapping TypeName="prManSysModel.suppliers_receipts">
+        <MappingFragment StoreEntitySet="suppliers_receipts">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="supplier_id" ColumnName="supplier_id" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="item_unit" ColumnName="item_unit" />
+          <ScalarProperty Name="fin_rec_id" ColumnName="fin_rec_id" />
+          <ScalarProperty Name="transaction_type" ColumnName="transaction_type" />
+          <ScalarProperty Name="purchase_detail" ColumnName="purchase_detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="prManSysModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="task_funding">
+      <EntityTypeMapping TypeName="prManSysModel.task_funding">
+        <MappingFragment StoreEntitySet="task_funding">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="fund_description" ColumnName="fund_description" />
+          <ScalarProperty Name="f_currency" ColumnName="f_currency" />
+          <ScalarProperty Name="f_amount" ColumnName="f_amount" />
+          <ScalarProperty Name="fund_rec" ColumnName="fund_rec" />
+          <ScalarProperty Name="assign_by" ColumnName="assign_by" />
+          <ScalarProperty Name="assign_date" ColumnName="assign_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="task_items">
+      <EntityTypeMapping TypeName="prManSysModel.task_items">
+        <MappingFragment StoreEntitySet="task_items">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="task_description" ColumnName="task_description" />
+          <ScalarProperty Name="item_id" ColumnName="item_id" />
+          <ScalarProperty Name="i_unit" ColumnName="i_unit" />
+          <ScalarProperty Name="i_amount" ColumnName="i_amount" />
+          <ScalarProperty Name="stk_receipt_id" ColumnName="stk_receipt_id" />
+          <ScalarProperty Name="pur_receipt_id" ColumnName="pur_receipt_id" />
+          <ScalarProperty Name="assign_by" ColumnName="assign_by" />
+          <ScalarProperty Name="assign_date" ColumnName="assign_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="task_progress">
+      <EntityTypeMapping TypeName="prManSysModel.task_progress">
+        <MappingFragment StoreEntitySet="task_progress">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="is_contractor" ColumnName="is_contractor" />
+          <ScalarProperty Name="subcontract_id" ColumnName="subcontract_id" />
+          <ScalarProperty Name="set_progress" ColumnName="set_progress" />
+          <ScalarProperty Name="assign_by" ColumnName="assign_by" />
+          <ScalarProperty Name="assign_date" ColumnName="assign_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="task_subcontract">
+      <EntityTypeMapping TypeName="prManSysModel.task_subcontract">
+        <MappingFragment StoreEntitySet="task_subcontract">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="task_description" ColumnName="task_description" />
+          <ScalarProperty Name="contractor_rec" ColumnName="contractor_rec" />
+          <ScalarProperty Name="assign_by" ColumnName="assign_by" />
+          <ScalarProperty Name="assign_date" ColumnName="assign_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="task_worker">
+      <EntityTypeMapping TypeName="prManSysModel.task_worker">
+        <MappingFragment StoreEntitySet="task_worker">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="task_id" ColumnName="task_id" />
+          <ScalarProperty Name="work_description" ColumnName="work_description" />
+          <ScalarProperty Name="emp_id" ColumnName="emp_id" />
+          <ScalarProperty Name="planned_working_hours" ColumnName="planned_working_hours" />
+          <ScalarProperty Name="i_currency" ColumnName="i_currency" />
+          <ScalarProperty Name="emp_wage_hourly" ColumnName="emp_wage_hourly" />
+          <ScalarProperty Name="actual_working_hours" ColumnName="actual_working_hours" />
+          <ScalarProperty Name="assign_by" ColumnName="assign_by" />
+          <ScalarProperty Name="assign_date" ColumnName="assign_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tax_rules">
+      <EntityTypeMapping TypeName="prManSysModel.tax_rules">
+        <MappingFragment StoreEntitySet="tax_rules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tax_rule" ColumnName="tax_rule" />
+          <ScalarProperty Name="tax_percent" ColumnName="tax_percent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="prManSysModel.users">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="u_name" ColumnName="u_name" />
+          <ScalarProperty Name="u_password" ColumnName="u_password" />
+          <ScalarProperty Name="emp_name" ColumnName="emp_name" />
+          <ScalarProperty Name="emp_email" ColumnName="emp_email" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="department_id" ColumnName="department_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

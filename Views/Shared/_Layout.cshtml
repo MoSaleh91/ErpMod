@@ -1,0 +1,227 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - إدارة المشاريع</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body dir="rtl">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                <div class="position-sticky">
+                    <h5 class="text-center my-4">
+                        @Html.ActionLink("ادارة المشاريع - 0.0 ", "Index", "Es", new { area = "" }, new { @class = "nav-link" })
+                    </h5>
+
+                    <ul class="nav flex-column">
+                        <!-- Bids Section -->
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#bidsCollapse" role="button" aria-expanded="false" aria-controls="bidsCollapse">
+                                العطاءات
+                            </a>
+                            <div class="collapse" id="bidsCollapse">
+                                <ul class="nav flex-column pl-4">
+                                    <li class="nav-item">
+                                        @Html.ActionLink("حالة العطاءات", "BidStatus", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("عطاء جديد", "NewBid", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("تسعير العطاء", "BidPricing", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("تقديم عرض سعر ", "PriceOffer", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("التعاقدات ", "Contracts", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("المخطط التنفيذي ", "ExecutiveSummary", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("مستخلصات المالك/العميل ", "ClientRec", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Contractors Section -->
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#contractorsCollapse" role="button" aria-expanded="false" aria-controls="contractorsCollapse">
+                                مقاولين الباطن
+                            </a>
+                            <div class="collapse" id="contractorsCollapse">
+                                <ul class="nav flex-column pl-4">
+                                    <li class="nav-item">
+                                        @Html.ActionLink("تعاقد مع مقاول الباطن", "ContractorAgreement", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("مستخلصات مقاولي الباطن", "ContractorInvoices", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <!-- Add other child links as needed -->
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Self Execution Section -->
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#executionCollapse" role="button" aria-expanded="false" aria-controls="executionCollapse">
+                                التنفيذ الذاتي
+                            </a>
+                            <div class="collapse" id="executionCollapse">
+                                <ul class="nav flex-column pl-4">
+                                    <li class="nav-item">
+                                        @Html.ActionLink("العمالة", "Labor", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("المواد والخامات", "Materials", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("مصروفات نقدية", "CashExpenses", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("المستخلصات التنفيذية", "ExecutionSummaries", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <!-- Add other child links as needed -->
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Reports Section -->
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#reportsCollapse" role="button" aria-expanded="false" aria-controls="reportsCollapse">
+                                التقارير
+                            </a>
+                            <div class="collapse" id="reportsCollapse">
+                                <ul class="nav flex-column pl-4">
+                                    <li class="nav-item">
+                                        @Html.ActionLink("تقارير التكلفة", "CostReports", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("تقارير اليومية", "DailyReports", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("تقارير الخصم والاضافة", "DeductionAndAdditionReports", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("المواقف المالية", "FinancialPositions", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <!-- Add other child links as needed -->
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Basic Data Section -->
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="collapse" href="#basicDataCollapse" role="button" aria-expanded="false" aria-controls="basicDataCollapse">
+                                بيانات اساسية
+                            </a>
+                            <div class="collapse" id="basicDataCollapse">
+                                <ul class="nav flex-column pl-4">
+                                    <li class="nav-item">
+                                        @Html.ActionLink("الملاك/العملاء", "Clients", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("المديرين/الاستشاريين", "ManagersAndConsultants", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("مقاولي الباطن", "Subcontractors", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("حالات العطاء", "ProjectStatus", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("حالات التسعير", "PricingStatus", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("حالات المراجعة", "ReviewStatus", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("حالات العقود", "ContractStatus", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("نماذج العقود", "ContractModels", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("انواع العقود", "ContractTypes", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("نماذج البنود", "ItemModels", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("نماذج القيود", "EntryModels", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("انواع القيود", "EntryTypes", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("انواع اليوميات", "DailyStatementModels", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("نماذج اوراق", "DocModels", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("خزينة اوراق", "DocTreas", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("انواع المدفوعات/المقبوضات", "PaymentReceiptTypes", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("انواع الحركات خزينة", "PaymentMovementTypes", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("نماذج الفواتير", "InvoiceModels", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("انواع الفواتير", "InvoiceTypes", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("دفتر الفواتير", "InvoiceBook", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("الموردين", "Suppliers", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("اصناف مواد وخامات", "ItemCategories", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <li class="nav-item">
+                                        @Html.ActionLink("انواع مواد وخامات", "ItemTypes", "Es", new { area = "" }, new { @class = "nav-link" })
+                                    </li>
+                                    <!-- Add other child links as needed -->
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- Add more parent sections and child links as needed -->
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="container body-content">
+                    @RenderBody()
+                    <hr />
+                    <footer>
+                        <p>نظام إدارة مشروعات تجريبي  @DateTime.Now.Month / @DateTime.Now.Year</p>
+                    </footer>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script>
+        document.getElementById('sidebarToggle').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('d-md-block');
+        });
+    </script>
+</body>
+</html>

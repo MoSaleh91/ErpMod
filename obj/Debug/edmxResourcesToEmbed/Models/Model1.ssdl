@@ -1,0 +1,1697 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="prManSysModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="analysis_status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="analysis_stat" Type="varchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="clients">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="c_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="c_email" Type="varchar" MaxLength="50" />
+    <Property Name="tax_id" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="clients_receipts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="client_id" Type="int" />
+    <Property Name="proj_id" Type="int" />
+    <Property Name="fin_rec_id" Type="int" />
+    <Property Name="pr_paymen_type" Type="int" />
+    <Property Name="receipt_details" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="common_units">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="unit_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="unit_ac" Type="char" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="contractors">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sc_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sc_email" Type="varchar" MaxLength="50" />
+    <Property Name="tax_id" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="domain_id" Type="int" />
+  </EntityType>
+  <EntityType Name="contractors_receipts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="contractor_id" Type="int" />
+    <Property Name="proj_id" Type="int" />
+    <Property Name="fin_rec_id" Type="int" />
+    <Property Name="pr_paymen_type" Type="int" />
+    <Property Name="receipt_details" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="currency_list">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cur_name" Type="varchar" MaxLength="16" Nullable="false" />
+    <Property Name="cur_symbol" Type="char" MaxLength="3" Nullable="false" />
+    <Property Name="cur_rate" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="departments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="department_name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="fin_rec_status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rec_status" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="fin_rec_types">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="trx_type" Type="bit" Nullable="false" />
+    <Property Name="trx_reason" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="financial_records">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="transaction_type" Type="int" />
+    <Property Name="transaction_status" Type="int" />
+    <Property Name="f_amount" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="f_currency" Type="int" />
+    <Property Name="transaction_detail" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="assign_by" Type="int" Nullable="false" />
+    <Property Name="assign_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="init_risk">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="domain_id" Type="int" />
+    <Property Name="domain_risk_percent" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="init_status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="init_stat" Type="varchar" MaxLength="16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="item_list">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="item_name" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="item_description" Type="varchar" MaxLength="250" />
+    <Property Name="item_type" Type="int" />
+  </EntityType>
+  <EntityType Name="item_source">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="phase_id" Type="int" Nullable="false" />
+    <Property Name="amount_in_stock" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="stock_avg_price" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="prev_purchase_price" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="is_new_price" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="item_types">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="in_type" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pricing_rules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="type_of_rule" Type="bit" Nullable="false" />
+    <Property Name="price_rule" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="price_percent" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="pricing_status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pricing_stat" Type="varchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="proj_domain">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="p_domains" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="proj_phases">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="proj_id" Type="int" Nullable="false" />
+    <Property Name="phase_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phase_description" Type="varchar" MaxLength="250" />
+    <Property Name="p_unit" Type="int" Nullable="false" />
+    <Property Name="p_amount" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="notes" Type="varchar" MaxLength="250" />
+    <Property Name="parent_id" Type="int" />
+    <Property Name="hasChildren" Type="bit" Nullable="false" />
+    <Property Name="estimated_start_date" Type="datetime" Nullable="false" />
+    <Property Name="estimated_end_date" Type="datetime" Nullable="false" />
+    <Property Name="cur_status" Type="int" />
+  </EntityType>
+  <EntityType Name="proj_pricing">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="phase_id" Type="int" Nullable="false" />
+    <Property Name="item_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="item_id" Type="int" />
+    <Property Name="item_description" Type="varchar" MaxLength="250" />
+    <Property Name="p_unit" Type="int" Nullable="false" />
+    <Property Name="p_amount" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="notes" Type="varchar" MaxLength="250" />
+    <Property Name="i_source" Type="int" />
+    <Property Name="unit_costs" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="added_expenses" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="tax_rule" Type="int" />
+    <Property Name="rev_rule" Type="int" />
+    <Property Name="price_rule" Type="int" />
+    <Property Name="domain_risk" Type="int" />
+    <Property Name="risk_rule" Type="int" />
+    <Property Name="total_costs" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="total_sell_price" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="cur_status" Type="int" />
+  </EntityType>
+  <EntityType Name="project_contracts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pricing_id" Type="int" Nullable="false" />
+    <Property Name="total_price" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="pric_rule" Type="int" />
+    <Property Name="client_rec_id" Type="int" Nullable="false" />
+    <Property Name="contract_terms" Type="varchar" MaxLength="640" Nullable="false" />
+    <Property Name="assign_by" Type="int" Nullable="false" />
+    <Property Name="assign_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="project_executive">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="proj_id" Type="int" Nullable="false" />
+    <Property Name="pricing_id" Type="int" />
+    <Property Name="task_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="task_description" Type="varchar" MaxLength="250" />
+    <Property Name="task_priority" Type="int" Nullable="false" />
+    <Property Name="planned_start_date" Type="datetime" Nullable="false" />
+    <Property Name="planned_end_date" Type="datetime" Nullable="false" />
+    <Property Name="actual_start_date" Type="datetime" />
+    <Property Name="actual_end_date" Type="datetime" />
+    <Property Name="planned_resource" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="planned_fund" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="actual_resource" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="actual_fund" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="assign_by" Type="int" Nullable="false" />
+    <Property Name="assign_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="project_payment_types">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="payment_types" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="project_status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="p_status" Type="int" Nullable="false" />
+    <Property Name="is_paused" Type="bit" Nullable="false" />
+    <Property Name="is_internal" Type="bit" Nullable="false" />
+    <Property Name="assign_date" Type="datetime" />
+    <Property Name="assign_by" Type="int" />
+  </EntityType>
+  <EntityType Name="project_users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="project_id" Type="int" Nullable="false" />
+    <Property Name="u_id" Type="int" Nullable="false" />
+    <Property Name="u_role" Type="varchar" MaxLength="16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="projects">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="p_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="p_domain" Type="int" Nullable="false" />
+    <Property Name="p_description" Type="varchar" MaxLength="250" />
+    <Property Name="client_id" Type="int" />
+    <Property Name="p_start_date" Type="datetime" Nullable="false" />
+    <Property Name="p_end_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="purchase_trx_types">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="purchase_types" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="revenue_rules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="rev_rule" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="rev_percent" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="risk_rules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="risk_rule" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="risk_percent" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role_name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="storage_receipts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="item_id" Type="int" />
+    <Property Name="item_unit" Type="int" />
+    <Property Name="item_amount" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="unit_price" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="transaction_type" Type="int" />
+    <Property Name="transaction_detail" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="assign_by" Type="int" Nullable="false" />
+    <Property Name="assign_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="storage_trx_types">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="trx_type" Type="bit" Nullable="false" />
+    <Property Name="trx_reason" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="suppliers">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="s_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="s_email" Type="varchar" MaxLength="50" />
+    <Property Name="tax_id" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="suppliers_receipts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="supplier_id" Type="int" />
+    <Property Name="item_id" Type="int" />
+    <Property Name="item_unit" Type="int" />
+    <Property Name="fin_rec_id" Type="int" />
+    <Property Name="transaction_type" Type="int" />
+    <Property Name="purchase_detail" Type="varchar" MaxLength="250" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="task_funding">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="task_id" Type="int" />
+    <Property Name="fund_description" Type="varchar" MaxLength="250" />
+    <Property Name="f_currency" Type="int" Nullable="false" />
+    <Property Name="f_amount" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="fund_rec" Type="int" Nullable="false" />
+    <Property Name="assign_by" Type="int" Nullable="false" />
+    <Property Name="assign_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="task_items">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="task_id" Type="int" />
+    <Property Name="task_description" Type="varchar" MaxLength="250" />
+    <Property Name="item_id" Type="int" />
+    <Property Name="i_unit" Type="int" Nullable="false" />
+    <Property Name="i_amount" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="stk_receipt_id" Type="int" />
+    <Property Name="pur_receipt_id" Type="int" />
+    <Property Name="assign_by" Type="int" Nullable="false" />
+    <Property Name="assign_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="task_progress">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="task_id" Type="int" />
+    <Property Name="is_contractor" Type="bit" Nullable="false" />
+    <Property Name="subcontract_id" Type="int" />
+    <Property Name="set_progress" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="assign_by" Type="int" Nullable="false" />
+    <Property Name="assign_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="task_subcontract">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="task_id" Type="int" />
+    <Property Name="task_description" Type="varchar" MaxLength="250" />
+    <Property Name="contractor_rec" Type="int" Nullable="false" />
+    <Property Name="assign_by" Type="int" Nullable="false" />
+    <Property Name="assign_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="task_worker">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="task_id" Type="int" />
+    <Property Name="work_description" Type="varchar" MaxLength="250" />
+    <Property Name="emp_id" Type="int" Nullable="false" />
+    <Property Name="planned_working_hours" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="i_currency" Type="int" Nullable="false" />
+    <Property Name="emp_wage_hourly" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="actual_working_hours" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="assign_by" Type="int" Nullable="false" />
+    <Property Name="assign_date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tax_rules">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tax_rule" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tax_percent" Type="numeric" Precision="18" Scale="0" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="u_name" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="u_password" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="emp_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="emp_email" Type="varchar" MaxLength="50" />
+    <Property Name="role_id" Type="int" Nullable="false" />
+    <Property Name="department_id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__clients_r__clien__1BC821DD">
+    <End Role="clients" Type="Self.clients" Multiplicity="0..1" />
+    <End Role="clients_receipts" Type="Self.clients_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clients">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="clients_receipts">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__clients_r__fin_r__1DB06A4F">
+    <End Role="financial_records" Type="Self.financial_records" Multiplicity="0..1" />
+    <End Role="clients_receipts" Type="Self.clients_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="financial_records">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="clients_receipts">
+        <PropertyRef Name="fin_rec_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__clients_r__pr_pa__1EA48E88">
+    <End Role="project_payment_types" Type="Self.project_payment_types" Multiplicity="0..1" />
+    <End Role="clients_receipts" Type="Self.clients_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="project_payment_types">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="clients_receipts">
+        <PropertyRef Name="pr_paymen_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__clients_r__proj___1CBC4616">
+    <End Role="projects" Type="Self.projects" Multiplicity="0..1" />
+    <End Role="clients_receipts" Type="Self.clients_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="projects">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="clients_receipts">
+        <PropertyRef Name="proj_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__contracto__contr__160F4887">
+    <End Role="contractors" Type="Self.contractors" Multiplicity="0..1" />
+    <End Role="contractors_receipts" Type="Self.contractors_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contractors">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="contractors_receipts">
+        <PropertyRef Name="contractor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__contracto__domai__778AC167">
+    <End Role="proj_domain" Type="Self.proj_domain" Multiplicity="0..1" />
+    <End Role="contractors" Type="Self.contractors" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proj_domain">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="contractors">
+        <PropertyRef Name="domain_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__contracto__fin_r__17F790F9">
+    <End Role="financial_records" Type="Self.financial_records" Multiplicity="0..1" />
+    <End Role="contractors_receipts" Type="Self.contractors_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="financial_records">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="contractors_receipts">
+        <PropertyRef Name="fin_rec_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__contracto__pr_pa__18EBB532">
+    <End Role="project_payment_types" Type="Self.project_payment_types" Multiplicity="0..1" />
+    <End Role="contractors_receipts" Type="Self.contractors_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="project_payment_types">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="contractors_receipts">
+        <PropertyRef Name="pr_paymen_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__contracto__proj___17036CC0">
+    <End Role="projects" Type="Self.projects" Multiplicity="0..1" />
+    <End Role="contractors_receipts" Type="Self.contractors_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="projects">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="contractors_receipts">
+        <PropertyRef Name="proj_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__financial__assig__05D8E0BE">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="financial_records" Type="Self.financial_records" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="financial_records">
+        <PropertyRef Name="assign_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__financial__f_cur__04E4BC85">
+    <End Role="currency_list" Type="Self.currency_list" Multiplicity="0..1" />
+    <End Role="financial_records" Type="Self.financial_records" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="currency_list">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="financial_records">
+        <PropertyRef Name="f_currency" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__financial__trans__02FC7413">
+    <End Role="fin_rec_types" Type="Self.fin_rec_types" Multiplicity="0..1" />
+    <End Role="financial_records" Type="Self.financial_records" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fin_rec_types">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="financial_records">
+        <PropertyRef Name="transaction_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__init_risk__domai__46B27FE2">
+    <End Role="proj_domain" Type="Self.proj_domain" Multiplicity="0..1" />
+    <End Role="init_risk" Type="Self.init_risk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proj_domain">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="init_risk">
+        <PropertyRef Name="domain_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__item_list__item___6383C8BA">
+    <End Role="item_types" Type="Self.item_types" Multiplicity="0..1" />
+    <End Role="item_list" Type="Self.item_list" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="item_types">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="item_list">
+        <PropertyRef Name="item_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__item_sour__phase__3B40CD36">
+    <End Role="proj_phases" Type="Self.proj_phases" Multiplicity="1" />
+    <End Role="item_source" Type="Self.item_source" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proj_phases">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="item_source">
+        <PropertyRef Name="phase_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__proj_phas__cur_s__3864608B">
+    <End Role="analysis_status" Type="Self.analysis_status" Multiplicity="0..1" />
+    <End Role="proj_phases" Type="Self.proj_phases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="analysis_status">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="proj_phases">
+        <PropertyRef Name="cur_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__proj_phas__p_uni__367C1819">
+    <End Role="common_units" Type="Self.common_units" Multiplicity="1" />
+    <End Role="proj_phases" Type="Self.proj_phases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="common_units">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="proj_phases">
+        <PropertyRef Name="p_unit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__proj_phas__paren__37703C52">
+    <End Role="proj_phases" Type="Self.proj_phases" Multiplicity="0..1" />
+    <End Role="proj_phases1" Type="Self.proj_phases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proj_phases">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="proj_phases1">
+        <PropertyRef Name="parent_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__proj_phas__proj___3587F3E0">
+    <End Role="projects" Type="Self.projects" Multiplicity="1" />
+    <End Role="proj_phases" Type="Self.proj_phases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="projects">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="proj_phases">
+        <PropertyRef Name="proj_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__proj_pric__cur_s__6166761E">
+    <End Role="pricing_status" Type="Self.pricing_status" Multiplicity="0..1" />
+    <End Role="proj_pricing" Type="Self.proj_pricing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pricing_status">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="proj_pricing">
+        <PropertyRef Name="cur_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__proj_pric__domai__5D95E53A">
+    <End Role="init_risk" Type="Self.init_risk" Multiplicity="0..1" />
+    <End Role="proj_pricing" Type="Self.proj_pricing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="init_risk">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="proj_pricing">
+        <PropertyRef Name="domain_risk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__proj_pric__i_sou__58D1301D">
+    <End Role="item_source" Type="Self.item_source" Multiplicity="0..1" />
+    <End Role="proj_pricing" Type="Self.proj_pricing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="item_source">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="proj_pricing">
+        <PropertyRef Name="i_source" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__proj_pric__item___56E8E7AB">
+    <End Role="item_list" Type="Self.item_list" Multiplicity="0..1" />
+    <End Role="proj_pricing" Type="Self.proj_pricing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="item_list">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="proj_pricing">
+        <PropertyRef Name="item_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__proj_pric__p_uni__57DD0BE4">
+    <End Role="common_units" Type="Self.common_units" Multiplicity="1" />
+    <End Role="proj_pricing" Type="Self.proj_pricing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="common_units">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="proj_pricing">
+        <PropertyRef Name="p_unit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__proj_pric__phase__55F4C372">
+    <End Role="proj_phases" Type="Self.proj_phases" Multiplicity="1" />
+    <End Role="proj_pricing" Type="Self.proj_pricing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proj_phases">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="proj_pricing">
+        <PropertyRef Name="phase_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__proj_pric__price__5CA1C101">
+    <End Role="pricing_rules" Type="Self.pricing_rules" Multiplicity="0..1" />
+    <End Role="proj_pricing" Type="Self.proj_pricing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pricing_rules">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="proj_pricing">
+        <PropertyRef Name="price_rule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__proj_pric__rev_r__5BAD9CC8">
+    <End Role="revenue_rules" Type="Self.revenue_rules" Multiplicity="0..1" />
+    <End Role="proj_pricing" Type="Self.proj_pricing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="revenue_rules">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="proj_pricing">
+        <PropertyRef Name="rev_rule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__proj_pric__risk___5E8A0973">
+    <End Role="risk_rules" Type="Self.risk_rules" Multiplicity="0..1" />
+    <End Role="proj_pricing" Type="Self.proj_pricing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="risk_rules">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="proj_pricing">
+        <PropertyRef Name="risk_rule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__proj_pric__tax_r__5AB9788F">
+    <End Role="tax_rules" Type="Self.tax_rules" Multiplicity="0..1" />
+    <End Role="proj_pricing" Type="Self.proj_pricing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tax_rules">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="proj_pricing">
+        <PropertyRef Name="tax_rule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__project_c__assig__756D6ECB">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="project_contracts" Type="Self.project_contracts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="project_contracts">
+        <PropertyRef Name="assign_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__project_c__clien__74794A92">
+    <End Role="clients_receipts" Type="Self.clients_receipts" Multiplicity="1" />
+    <End Role="project_contracts" Type="Self.project_contracts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clients_receipts">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="project_contracts">
+        <PropertyRef Name="client_rec_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__project_c__pric___73852659">
+    <End Role="pricing_rules" Type="Self.pricing_rules" Multiplicity="0..1" />
+    <End Role="project_contracts" Type="Self.project_contracts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="pricing_rules">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="project_contracts">
+        <PropertyRef Name="pric_rule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__project_c__prici__719CDDE7">
+    <End Role="proj_pricing" Type="Self.proj_pricing" Multiplicity="1" />
+    <End Role="project_contracts" Type="Self.project_contracts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proj_pricing">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="project_contracts">
+        <PropertyRef Name="pricing_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__project_e__assig__7C1A6C5A">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="project_executive" Type="Self.project_executive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="project_executive">
+        <PropertyRef Name="assign_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__project_e__prici__7B264821">
+    <End Role="proj_pricing" Type="Self.proj_pricing" Multiplicity="0..1" />
+    <End Role="project_executive" Type="Self.project_executive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proj_pricing">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="project_executive">
+        <PropertyRef Name="pricing_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__project_e__proj___7A3223E8">
+    <End Role="projects" Type="Self.projects" Multiplicity="1" />
+    <End Role="project_executive" Type="Self.project_executive" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="projects">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="project_executive">
+        <PropertyRef Name="proj_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__project_s__assig__4D94879B">
+    <End Role="users" Type="Self.users" Multiplicity="0..1" />
+    <End Role="project_status" Type="Self.project_status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="project_status">
+        <PropertyRef Name="assign_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__project_s__p_sta__4BAC3F29">
+    <End Role="init_status" Type="Self.init_status" Multiplicity="1" />
+    <End Role="project_status" Type="Self.project_status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="init_status">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="project_status">
+        <PropertyRef Name="p_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__project_s__proje__4AB81AF0">
+    <End Role="projects" Type="Self.projects" Multiplicity="1" />
+    <End Role="project_status" Type="Self.project_status" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="projects">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="project_status">
+        <PropertyRef Name="project_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__project_u__proje__5070F446">
+    <End Role="projects" Type="Self.projects" Multiplicity="1" />
+    <End Role="project_users" Type="Self.project_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="projects">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="project_users">
+        <PropertyRef Name="project_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__project_us__u_id__5165187F">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="project_users" Type="Self.project_users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="project_users">
+        <PropertyRef Name="u_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__projects__client__44FF419A">
+    <End Role="clients" Type="Self.clients" Multiplicity="0..1" />
+    <End Role="projects" Type="Self.projects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="clients">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="projects">
+        <PropertyRef Name="client_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__storage_r__assig__6D0D32F4">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="storage_receipts" Type="Self.storage_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="storage_receipts">
+        <PropertyRef Name="assign_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__storage_r__item___693CA210">
+    <End Role="item_list" Type="Self.item_list" Multiplicity="0..1" />
+    <End Role="storage_receipts" Type="Self.storage_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="item_list">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="storage_receipts">
+        <PropertyRef Name="item_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__storage_r__item___6A30C649">
+    <End Role="common_units" Type="Self.common_units" Multiplicity="0..1" />
+    <End Role="storage_receipts" Type="Self.storage_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="common_units">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="storage_receipts">
+        <PropertyRef Name="item_unit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__storage_r__trans__6C190EBB">
+    <End Role="storage_trx_types" Type="Self.storage_trx_types" Multiplicity="0..1" />
+    <End Role="storage_receipts" Type="Self.storage_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="storage_trx_types">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="storage_receipts">
+        <PropertyRef Name="transaction_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__suppliers__fin_r__0F624AF8">
+    <End Role="financial_records" Type="Self.financial_records" Multiplicity="0..1" />
+    <End Role="suppliers_receipts" Type="Self.suppliers_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="financial_records">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="suppliers_receipts">
+        <PropertyRef Name="fin_rec_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__suppliers__item___0D7A0286">
+    <End Role="item_list" Type="Self.item_list" Multiplicity="0..1" />
+    <End Role="suppliers_receipts" Type="Self.suppliers_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="item_list">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="suppliers_receipts">
+        <PropertyRef Name="item_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__suppliers__item___0E6E26BF">
+    <End Role="common_units" Type="Self.common_units" Multiplicity="0..1" />
+    <End Role="suppliers_receipts" Type="Self.suppliers_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="common_units">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="suppliers_receipts">
+        <PropertyRef Name="item_unit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__suppliers__suppl__0C85DE4D">
+    <End Role="suppliers" Type="Self.suppliers" Multiplicity="0..1" />
+    <End Role="suppliers_receipts" Type="Self.suppliers_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suppliers">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="suppliers_receipts">
+        <PropertyRef Name="supplier_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__suppliers__trans__10566F31">
+    <End Role="purchase_trx_types" Type="Self.purchase_trx_types" Multiplicity="0..1" />
+    <End Role="suppliers_receipts" Type="Self.suppliers_receipts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="purchase_trx_types">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="suppliers_receipts">
+        <PropertyRef Name="transaction_type" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_fund__assig__17C286CF">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="task_funding" Type="Self.task_funding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_funding">
+        <PropertyRef Name="assign_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_fund__f_cur__15DA3E5D">
+    <End Role="currency_list" Type="Self.currency_list" Multiplicity="1" />
+    <End Role="task_funding" Type="Self.task_funding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="currency_list">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_funding">
+        <PropertyRef Name="f_currency" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_fund__fund___16CE6296">
+    <End Role="financial_records" Type="Self.financial_records" Multiplicity="1" />
+    <End Role="task_funding" Type="Self.task_funding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="financial_records">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_funding">
+        <PropertyRef Name="fund_rec" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_fund__task___14E61A24">
+    <End Role="project_executive" Type="Self.project_executive" Multiplicity="0..1" />
+    <End Role="task_funding" Type="Self.task_funding" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="project_executive">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_funding">
+        <PropertyRef Name="task_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_item__assig__11158940">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="task_items" Type="Self.task_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_items">
+        <PropertyRef Name="assign_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_item__i_uni__0E391C95">
+    <End Role="common_units" Type="Self.common_units" Multiplicity="1" />
+    <End Role="task_items" Type="Self.task_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="common_units">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_items">
+        <PropertyRef Name="i_unit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_item__item___0D44F85C">
+    <End Role="item_list" Type="Self.item_list" Multiplicity="0..1" />
+    <End Role="task_items" Type="Self.task_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="item_list">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_items">
+        <PropertyRef Name="item_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_item__pur_r__10216507">
+    <End Role="suppliers_receipts" Type="Self.suppliers_receipts" Multiplicity="0..1" />
+    <End Role="task_items" Type="Self.task_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suppliers_receipts">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_items">
+        <PropertyRef Name="pur_receipt_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_item__stk_r__0F2D40CE">
+    <End Role="storage_receipts" Type="Self.storage_receipts" Multiplicity="0..1" />
+    <End Role="task_items" Type="Self.task_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="storage_receipts">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_items">
+        <PropertyRef Name="stk_receipt_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_item__task___0C50D423">
+    <End Role="project_executive" Type="Self.project_executive" Multiplicity="0..1" />
+    <End Role="task_items" Type="Self.task_items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="project_executive">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_items">
+        <PropertyRef Name="task_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_prog__assig__0880433F">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="task_progress" Type="Self.task_progress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_progress">
+        <PropertyRef Name="assign_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_prog__subco__0697FACD">
+    <End Role="task_subcontract" Type="Self.task_subcontract" Multiplicity="0..1" />
+    <End Role="task_progress" Type="Self.task_progress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="task_subcontract">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_progress">
+        <PropertyRef Name="subcontract_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_prog__task___05A3D694">
+    <End Role="project_executive" Type="Self.project_executive" Multiplicity="0..1" />
+    <End Role="task_progress" Type="Self.task_progress" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="project_executive">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_progress">
+        <PropertyRef Name="task_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_subc__assig__01D345B0">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="task_subcontract" Type="Self.task_subcontract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_subcontract">
+        <PropertyRef Name="assign_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_subc__contr__00DF2177">
+    <End Role="contractors_receipts" Type="Self.contractors_receipts" Multiplicity="1" />
+    <End Role="task_subcontract" Type="Self.task_subcontract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contractors_receipts">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_subcontract">
+        <PropertyRef Name="contractor_rec" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_subc__task___7FEAFD3E">
+    <End Role="project_executive" Type="Self.project_executive" Multiplicity="0..1" />
+    <End Role="task_subcontract" Type="Self.task_subcontract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="project_executive">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_subcontract">
+        <PropertyRef Name="task_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_work__assig__1E6F845E">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="task_worker" Type="Self.task_worker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_worker">
+        <PropertyRef Name="assign_by" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_work__emp_i__1C873BEC">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="task_worker" Type="Self.task_worker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_worker">
+        <PropertyRef Name="emp_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_work__i_cur__1D7B6025">
+    <End Role="currency_list" Type="Self.currency_list" Multiplicity="1" />
+    <End Role="task_worker" Type="Self.task_worker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="currency_list">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_worker">
+        <PropertyRef Name="i_currency" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__task_work__task___1B9317B3">
+    <End Role="project_executive" Type="Self.project_executive" Multiplicity="0..1" />
+    <End Role="task_worker" Type="Self.task_worker" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="project_executive">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="task_worker">
+        <PropertyRef Name="task_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__users__departmen__3F466844">
+    <End Role="departments" Type="Self.departments" Multiplicity="1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="departments">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__users__role_id__3E52440B">
+    <End Role="roles" Type="Self.roles" Multiplicity="1" />
+    <End Role="users" Type="Self.users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="roles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="users">
+        <PropertyRef Name="role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_financial_records_fin_rec_status">
+    <End Role="fin_rec_status" Type="Self.fin_rec_status" Multiplicity="0..1" />
+    <End Role="financial_records" Type="Self.financial_records" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fin_rec_status">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="financial_records">
+        <PropertyRef Name="transaction_status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_projects_proj_domain">
+    <End Role="proj_domain" Type="Self.proj_domain" Multiplicity="1" />
+    <End Role="projects" Type="Self.projects" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="proj_domain">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="projects">
+        <PropertyRef Name="p_domain" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="prManSysModelStoreContainer">
+    <EntitySet Name="analysis_status" EntityType="Self.analysis_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="clients" EntityType="Self.clients" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="clients_receipts" EntityType="Self.clients_receipts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="common_units" EntityType="Self.common_units" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contractors" EntityType="Self.contractors" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="contractors_receipts" EntityType="Self.contractors_receipts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="currency_list" EntityType="Self.currency_list" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="departments" EntityType="Self.departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fin_rec_status" EntityType="Self.fin_rec_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="fin_rec_types" EntityType="Self.fin_rec_types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="financial_records" EntityType="Self.financial_records" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="init_risk" EntityType="Self.init_risk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="init_status" EntityType="Self.init_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="item_list" EntityType="Self.item_list" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="item_source" EntityType="Self.item_source" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="item_types" EntityType="Self.item_types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pricing_rules" EntityType="Self.pricing_rules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pricing_status" EntityType="Self.pricing_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="proj_domain" EntityType="Self.proj_domain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="proj_phases" EntityType="Self.proj_phases" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="proj_pricing" EntityType="Self.proj_pricing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="project_contracts" EntityType="Self.project_contracts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="project_executive" EntityType="Self.project_executive" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="project_payment_types" EntityType="Self.project_payment_types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="project_status" EntityType="Self.project_status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="project_users" EntityType="Self.project_users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="projects" EntityType="Self.projects" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="purchase_trx_types" EntityType="Self.purchase_trx_types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="revenue_rules" EntityType="Self.revenue_rules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="risk_rules" EntityType="Self.risk_rules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="roles" EntityType="Self.roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="storage_receipts" EntityType="Self.storage_receipts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="storage_trx_types" EntityType="Self.storage_trx_types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="suppliers" EntityType="Self.suppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="suppliers_receipts" EntityType="Self.suppliers_receipts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="task_funding" EntityType="Self.task_funding" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="task_items" EntityType="Self.task_items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="task_progress" EntityType="Self.task_progress" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="task_subcontract" EntityType="Self.task_subcontract" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="task_worker" EntityType="Self.task_worker" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tax_rules" EntityType="Self.tax_rules" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__clients_r__clien__1BC821DD" Association="Self.FK__clients_r__clien__1BC821DD">
+      <End Role="clients" EntitySet="clients" />
+      <End Role="clients_receipts" EntitySet="clients_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__clients_r__fin_r__1DB06A4F" Association="Self.FK__clients_r__fin_r__1DB06A4F">
+      <End Role="financial_records" EntitySet="financial_records" />
+      <End Role="clients_receipts" EntitySet="clients_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__clients_r__pr_pa__1EA48E88" Association="Self.FK__clients_r__pr_pa__1EA48E88">
+      <End Role="project_payment_types" EntitySet="project_payment_types" />
+      <End Role="clients_receipts" EntitySet="clients_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__clients_r__proj___1CBC4616" Association="Self.FK__clients_r__proj___1CBC4616">
+      <End Role="projects" EntitySet="projects" />
+      <End Role="clients_receipts" EntitySet="clients_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__contracto__contr__160F4887" Association="Self.FK__contracto__contr__160F4887">
+      <End Role="contractors" EntitySet="contractors" />
+      <End Role="contractors_receipts" EntitySet="contractors_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__contracto__domai__778AC167" Association="Self.FK__contracto__domai__778AC167">
+      <End Role="proj_domain" EntitySet="proj_domain" />
+      <End Role="contractors" EntitySet="contractors" />
+    </AssociationSet>
+    <AssociationSet Name="FK__contracto__fin_r__17F790F9" Association="Self.FK__contracto__fin_r__17F790F9">
+      <End Role="financial_records" EntitySet="financial_records" />
+      <End Role="contractors_receipts" EntitySet="contractors_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__contracto__pr_pa__18EBB532" Association="Self.FK__contracto__pr_pa__18EBB532">
+      <End Role="project_payment_types" EntitySet="project_payment_types" />
+      <End Role="contractors_receipts" EntitySet="contractors_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__contracto__proj___17036CC0" Association="Self.FK__contracto__proj___17036CC0">
+      <End Role="projects" EntitySet="projects" />
+      <End Role="contractors_receipts" EntitySet="contractors_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__financial__assig__05D8E0BE" Association="Self.FK__financial__assig__05D8E0BE">
+      <End Role="users" EntitySet="users" />
+      <End Role="financial_records" EntitySet="financial_records" />
+    </AssociationSet>
+    <AssociationSet Name="FK__financial__f_cur__04E4BC85" Association="Self.FK__financial__f_cur__04E4BC85">
+      <End Role="currency_list" EntitySet="currency_list" />
+      <End Role="financial_records" EntitySet="financial_records" />
+    </AssociationSet>
+    <AssociationSet Name="FK__financial__trans__02FC7413" Association="Self.FK__financial__trans__02FC7413">
+      <End Role="fin_rec_types" EntitySet="fin_rec_types" />
+      <End Role="financial_records" EntitySet="financial_records" />
+    </AssociationSet>
+    <AssociationSet Name="FK__init_risk__domai__46B27FE2" Association="Self.FK__init_risk__domai__46B27FE2">
+      <End Role="proj_domain" EntitySet="proj_domain" />
+      <End Role="init_risk" EntitySet="init_risk" />
+    </AssociationSet>
+    <AssociationSet Name="FK__item_list__item___6383C8BA" Association="Self.FK__item_list__item___6383C8BA">
+      <End Role="item_types" EntitySet="item_types" />
+      <End Role="item_list" EntitySet="item_list" />
+    </AssociationSet>
+    <AssociationSet Name="FK__item_sour__phase__3B40CD36" Association="Self.FK__item_sour__phase__3B40CD36">
+      <End Role="proj_phases" EntitySet="proj_phases" />
+      <End Role="item_source" EntitySet="item_source" />
+    </AssociationSet>
+    <AssociationSet Name="FK__proj_phas__cur_s__3864608B" Association="Self.FK__proj_phas__cur_s__3864608B">
+      <End Role="analysis_status" EntitySet="analysis_status" />
+      <End Role="proj_phases" EntitySet="proj_phases" />
+    </AssociationSet>
+    <AssociationSet Name="FK__proj_phas__p_uni__367C1819" Association="Self.FK__proj_phas__p_uni__367C1819">
+      <End Role="common_units" EntitySet="common_units" />
+      <End Role="proj_phases" EntitySet="proj_phases" />
+    </AssociationSet>
+    <AssociationSet Name="FK__proj_phas__paren__37703C52" Association="Self.FK__proj_phas__paren__37703C52">
+      <End Role="proj_phases" EntitySet="proj_phases" />
+      <End Role="proj_phases1" EntitySet="proj_phases" />
+    </AssociationSet>
+    <AssociationSet Name="FK__proj_phas__proj___3587F3E0" Association="Self.FK__proj_phas__proj___3587F3E0">
+      <End Role="projects" EntitySet="projects" />
+      <End Role="proj_phases" EntitySet="proj_phases" />
+    </AssociationSet>
+    <AssociationSet Name="FK__proj_pric__cur_s__6166761E" Association="Self.FK__proj_pric__cur_s__6166761E">
+      <End Role="pricing_status" EntitySet="pricing_status" />
+      <End Role="proj_pricing" EntitySet="proj_pricing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__proj_pric__domai__5D95E53A" Association="Self.FK__proj_pric__domai__5D95E53A">
+      <End Role="init_risk" EntitySet="init_risk" />
+      <End Role="proj_pricing" EntitySet="proj_pricing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__proj_pric__i_sou__58D1301D" Association="Self.FK__proj_pric__i_sou__58D1301D">
+      <End Role="item_source" EntitySet="item_source" />
+      <End Role="proj_pricing" EntitySet="proj_pricing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__proj_pric__item___56E8E7AB" Association="Self.FK__proj_pric__item___56E8E7AB">
+      <End Role="item_list" EntitySet="item_list" />
+      <End Role="proj_pricing" EntitySet="proj_pricing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__proj_pric__p_uni__57DD0BE4" Association="Self.FK__proj_pric__p_uni__57DD0BE4">
+      <End Role="common_units" EntitySet="common_units" />
+      <End Role="proj_pricing" EntitySet="proj_pricing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__proj_pric__phase__55F4C372" Association="Self.FK__proj_pric__phase__55F4C372">
+      <End Role="proj_phases" EntitySet="proj_phases" />
+      <End Role="proj_pricing" EntitySet="proj_pricing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__proj_pric__price__5CA1C101" Association="Self.FK__proj_pric__price__5CA1C101">
+      <End Role="pricing_rules" EntitySet="pricing_rules" />
+      <End Role="proj_pricing" EntitySet="proj_pricing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__proj_pric__rev_r__5BAD9CC8" Association="Self.FK__proj_pric__rev_r__5BAD9CC8">
+      <End Role="revenue_rules" EntitySet="revenue_rules" />
+      <End Role="proj_pricing" EntitySet="proj_pricing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__proj_pric__risk___5E8A0973" Association="Self.FK__proj_pric__risk___5E8A0973">
+      <End Role="risk_rules" EntitySet="risk_rules" />
+      <End Role="proj_pricing" EntitySet="proj_pricing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__proj_pric__tax_r__5AB9788F" Association="Self.FK__proj_pric__tax_r__5AB9788F">
+      <End Role="tax_rules" EntitySet="tax_rules" />
+      <End Role="proj_pricing" EntitySet="proj_pricing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__project_c__assig__756D6ECB" Association="Self.FK__project_c__assig__756D6ECB">
+      <End Role="users" EntitySet="users" />
+      <End Role="project_contracts" EntitySet="project_contracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__project_c__clien__74794A92" Association="Self.FK__project_c__clien__74794A92">
+      <End Role="clients_receipts" EntitySet="clients_receipts" />
+      <End Role="project_contracts" EntitySet="project_contracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__project_c__pric___73852659" Association="Self.FK__project_c__pric___73852659">
+      <End Role="pricing_rules" EntitySet="pricing_rules" />
+      <End Role="project_contracts" EntitySet="project_contracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__project_c__prici__719CDDE7" Association="Self.FK__project_c__prici__719CDDE7">
+      <End Role="proj_pricing" EntitySet="proj_pricing" />
+      <End Role="project_contracts" EntitySet="project_contracts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__project_e__assig__7C1A6C5A" Association="Self.FK__project_e__assig__7C1A6C5A">
+      <End Role="users" EntitySet="users" />
+      <End Role="project_executive" EntitySet="project_executive" />
+    </AssociationSet>
+    <AssociationSet Name="FK__project_e__prici__7B264821" Association="Self.FK__project_e__prici__7B264821">
+      <End Role="proj_pricing" EntitySet="proj_pricing" />
+      <End Role="project_executive" EntitySet="project_executive" />
+    </AssociationSet>
+    <AssociationSet Name="FK__project_e__proj___7A3223E8" Association="Self.FK__project_e__proj___7A3223E8">
+      <End Role="projects" EntitySet="projects" />
+      <End Role="project_executive" EntitySet="project_executive" />
+    </AssociationSet>
+    <AssociationSet Name="FK__project_s__assig__4D94879B" Association="Self.FK__project_s__assig__4D94879B">
+      <End Role="users" EntitySet="users" />
+      <End Role="project_status" EntitySet="project_status" />
+    </AssociationSet>
+    <AssociationSet Name="FK__project_s__p_sta__4BAC3F29" Association="Self.FK__project_s__p_sta__4BAC3F29">
+      <End Role="init_status" EntitySet="init_status" />
+      <End Role="project_status" EntitySet="project_status" />
+    </AssociationSet>
+    <AssociationSet Name="FK__project_s__proje__4AB81AF0" Association="Self.FK__project_s__proje__4AB81AF0">
+      <End Role="projects" EntitySet="projects" />
+      <End Role="project_status" EntitySet="project_status" />
+    </AssociationSet>
+    <AssociationSet Name="FK__project_u__proje__5070F446" Association="Self.FK__project_u__proje__5070F446">
+      <End Role="projects" EntitySet="projects" />
+      <End Role="project_users" EntitySet="project_users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__project_us__u_id__5165187F" Association="Self.FK__project_us__u_id__5165187F">
+      <End Role="users" EntitySet="users" />
+      <End Role="project_users" EntitySet="project_users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__projects__client__44FF419A" Association="Self.FK__projects__client__44FF419A">
+      <End Role="clients" EntitySet="clients" />
+      <End Role="projects" EntitySet="projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK__storage_r__assig__6D0D32F4" Association="Self.FK__storage_r__assig__6D0D32F4">
+      <End Role="users" EntitySet="users" />
+      <End Role="storage_receipts" EntitySet="storage_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__storage_r__item___693CA210" Association="Self.FK__storage_r__item___693CA210">
+      <End Role="item_list" EntitySet="item_list" />
+      <End Role="storage_receipts" EntitySet="storage_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__storage_r__item___6A30C649" Association="Self.FK__storage_r__item___6A30C649">
+      <End Role="common_units" EntitySet="common_units" />
+      <End Role="storage_receipts" EntitySet="storage_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__storage_r__trans__6C190EBB" Association="Self.FK__storage_r__trans__6C190EBB">
+      <End Role="storage_trx_types" EntitySet="storage_trx_types" />
+      <End Role="storage_receipts" EntitySet="storage_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__suppliers__fin_r__0F624AF8" Association="Self.FK__suppliers__fin_r__0F624AF8">
+      <End Role="financial_records" EntitySet="financial_records" />
+      <End Role="suppliers_receipts" EntitySet="suppliers_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__suppliers__item___0D7A0286" Association="Self.FK__suppliers__item___0D7A0286">
+      <End Role="item_list" EntitySet="item_list" />
+      <End Role="suppliers_receipts" EntitySet="suppliers_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__suppliers__item___0E6E26BF" Association="Self.FK__suppliers__item___0E6E26BF">
+      <End Role="common_units" EntitySet="common_units" />
+      <End Role="suppliers_receipts" EntitySet="suppliers_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__suppliers__suppl__0C85DE4D" Association="Self.FK__suppliers__suppl__0C85DE4D">
+      <End Role="suppliers" EntitySet="suppliers" />
+      <End Role="suppliers_receipts" EntitySet="suppliers_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__suppliers__trans__10566F31" Association="Self.FK__suppliers__trans__10566F31">
+      <End Role="purchase_trx_types" EntitySet="purchase_trx_types" />
+      <End Role="suppliers_receipts" EntitySet="suppliers_receipts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_fund__assig__17C286CF" Association="Self.FK__task_fund__assig__17C286CF">
+      <End Role="users" EntitySet="users" />
+      <End Role="task_funding" EntitySet="task_funding" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_fund__f_cur__15DA3E5D" Association="Self.FK__task_fund__f_cur__15DA3E5D">
+      <End Role="currency_list" EntitySet="currency_list" />
+      <End Role="task_funding" EntitySet="task_funding" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_fund__fund___16CE6296" Association="Self.FK__task_fund__fund___16CE6296">
+      <End Role="financial_records" EntitySet="financial_records" />
+      <End Role="task_funding" EntitySet="task_funding" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_fund__task___14E61A24" Association="Self.FK__task_fund__task___14E61A24">
+      <End Role="project_executive" EntitySet="project_executive" />
+      <End Role="task_funding" EntitySet="task_funding" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_item__assig__11158940" Association="Self.FK__task_item__assig__11158940">
+      <End Role="users" EntitySet="users" />
+      <End Role="task_items" EntitySet="task_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_item__i_uni__0E391C95" Association="Self.FK__task_item__i_uni__0E391C95">
+      <End Role="common_units" EntitySet="common_units" />
+      <End Role="task_items" EntitySet="task_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_item__item___0D44F85C" Association="Self.FK__task_item__item___0D44F85C">
+      <End Role="item_list" EntitySet="item_list" />
+      <End Role="task_items" EntitySet="task_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_item__pur_r__10216507" Association="Self.FK__task_item__pur_r__10216507">
+      <End Role="suppliers_receipts" EntitySet="suppliers_receipts" />
+      <End Role="task_items" EntitySet="task_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_item__stk_r__0F2D40CE" Association="Self.FK__task_item__stk_r__0F2D40CE">
+      <End Role="storage_receipts" EntitySet="storage_receipts" />
+      <End Role="task_items" EntitySet="task_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_item__task___0C50D423" Association="Self.FK__task_item__task___0C50D423">
+      <End Role="project_executive" EntitySet="project_executive" />
+      <End Role="task_items" EntitySet="task_items" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_prog__assig__0880433F" Association="Self.FK__task_prog__assig__0880433F">
+      <End Role="users" EntitySet="users" />
+      <End Role="task_progress" EntitySet="task_progress" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_prog__subco__0697FACD" Association="Self.FK__task_prog__subco__0697FACD">
+      <End Role="task_subcontract" EntitySet="task_subcontract" />
+      <End Role="task_progress" EntitySet="task_progress" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_prog__task___05A3D694" Association="Self.FK__task_prog__task___05A3D694">
+      <End Role="project_executive" EntitySet="project_executive" />
+      <End Role="task_progress" EntitySet="task_progress" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_subc__assig__01D345B0" Association="Self.FK__task_subc__assig__01D345B0">
+      <End Role="users" EntitySet="users" />
+      <End Role="task_subcontract" EntitySet="task_subcontract" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_subc__contr__00DF2177" Association="Self.FK__task_subc__contr__00DF2177">
+      <End Role="contractors_receipts" EntitySet="contractors_receipts" />
+      <End Role="task_subcontract" EntitySet="task_subcontract" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_subc__task___7FEAFD3E" Association="Self.FK__task_subc__task___7FEAFD3E">
+      <End Role="project_executive" EntitySet="project_executive" />
+      <End Role="task_subcontract" EntitySet="task_subcontract" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_work__assig__1E6F845E" Association="Self.FK__task_work__assig__1E6F845E">
+      <End Role="users" EntitySet="users" />
+      <End Role="task_worker" EntitySet="task_worker" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_work__emp_i__1C873BEC" Association="Self.FK__task_work__emp_i__1C873BEC">
+      <End Role="users" EntitySet="users" />
+      <End Role="task_worker" EntitySet="task_worker" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_work__i_cur__1D7B6025" Association="Self.FK__task_work__i_cur__1D7B6025">
+      <End Role="currency_list" EntitySet="currency_list" />
+      <End Role="task_worker" EntitySet="task_worker" />
+    </AssociationSet>
+    <AssociationSet Name="FK__task_work__task___1B9317B3" Association="Self.FK__task_work__task___1B9317B3">
+      <End Role="project_executive" EntitySet="project_executive" />
+      <End Role="task_worker" EntitySet="task_worker" />
+    </AssociationSet>
+    <AssociationSet Name="FK__users__departmen__3F466844" Association="Self.FK__users__departmen__3F466844">
+      <End Role="departments" EntitySet="departments" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__users__role_id__3E52440B" Association="Self.FK__users__role_id__3E52440B">
+      <End Role="roles" EntitySet="roles" />
+      <End Role="users" EntitySet="users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_financial_records_fin_rec_status" Association="Self.FK_financial_records_fin_rec_status">
+      <End Role="fin_rec_status" EntitySet="fin_rec_status" />
+      <End Role="financial_records" EntitySet="financial_records" />
+    </AssociationSet>
+    <AssociationSet Name="FK_projects_proj_domain" Association="Self.FK_projects_proj_domain">
+      <End Role="proj_domain" EntitySet="proj_domain" />
+      <End Role="projects" EntitySet="projects" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
